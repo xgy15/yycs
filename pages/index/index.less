@@ -13,3 +13,26 @@
         }
     }
 }
+/*使用浮动快速完成布局，但是图片不是很标准的，需要手动修改
+左侧大图片高度 = 右侧图片高度*2
+左侧大图片宽度（750/3）/ 图片高度 = 原本图片宽度 / 原本图片高度  
+手动将右侧图片设一个高度，还要把 image标签mode属性设成 scaleToFill使图片填满 */
+.floor {
+    .floor-main {
+        overflow: hidden;
+        height: 420rpx;
+        .floor-item {
+            float: left;
+            width: 33.33%;
+            image {
+                /*去除图片下方默认3px*/
+                display: block;
+            }
+            &:nth-last-child(-n+4) {
+                image {
+                    height: 210rpx;
+                }
+            }
+        }
+    }
+}

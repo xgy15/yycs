@@ -1,13 +1,30 @@
 
+<!-- 首页轮播图 -->
 <swiper indicator-dots autoplay circular class="swiper" indicator-active-color="#fff">
     <swiper-item class="swiper-item" wx:for="{{swiperList}}" wx:key="goods_id">
         <image class="" src="{{item.image_src}}" mode="widthFix" />       
     </swiper-item>
 </swiper>
+<!-- 导航栏 -->
 <view class="navList">
     <navigator url="" wx:for="{{catitems}}" wx:key="name" class="navList-item">
         <image class="" src="{{item.image_src}}" mode="widthFix" />
-          
     </navigator>
 </view>
+<!-- 产品列表 -->
+<view class="floor">
+    <view wx:for="{{floorList}}" wx:key="item1" wx:for-item="item1" wx:for-index="index1">
+        <!-- 楼层标题 -->
+        <view class="floor-title">
+            <image src="{{item1.floor_title.image_src}}" mode="widthFix"/>
+        </view>
+        <!-- 楼层内容 -->
+        <view class="floor-main">  
+            <navigator url="" wx:for="{{item1.product_list}}" wx:for-item="item2" wx:key="name" wx:for-index="index2" class="floor-item">
+                <image src="{{item2.image_src}}" mode="{{index2 == 0 ? 'widthFix' : 'scaleToFill'}}"/>
+            </navigator>
+        </view>
+    </view>       
+</view>
+  
     
