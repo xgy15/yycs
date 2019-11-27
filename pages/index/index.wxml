@@ -1,7 +1,13 @@
 
-<swiper indicator-dots autoplay circular class="swiper">
+<swiper indicator-dots autoplay circular class="swiper" indicator-active-color="#fff">
     <swiper-item class="swiper-item" wx:for="{{swiperList}}" wx:key="goods_id">
         <image class="" src="{{item.image_src}}" mode="widthFix" />       
     </swiper-item>
 </swiper>
-  
+<view class="navList">
+    <navigator url="" wx:for="{{catitems}}" wx:key="name" class="navList-item">
+        <image class="" src="{{item.image_src}}" mode="widthFix" />
+          
+    </navigator>
+</view>
+    

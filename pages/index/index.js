@@ -5,7 +5,8 @@ const app = getApp()
 //Page Object
 Page({
   data: {
-    swiperList: []
+    swiperList: [],    // 轮播图列表
+    catitems: [],      // 导航数据列表
   },
   //0在页面的onLoad事件中来发送异步请求 
   onLoad: function(options) {
@@ -16,12 +17,19 @@ Page({
         this.setData({
           swiperList: res.data.message
         })
-        console.log(this.data.swiperList)
+        // console.log(this.data.swiperList)
       },
-      fail: () => {},
-      complete: () => {}
     });
-      
+    wx.request({
+      url: 'https://api.zbztb.cn/api/public/v1/home/catitems',
+      success: (res) => {
+        console.log(res)
+        this.setData({
+          catitems: res.data.message
+        })
+      },
+    });
+        
   },
   onReady: function() {
     
