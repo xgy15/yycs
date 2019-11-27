@@ -1,0 +1,7 @@
+
+<swiper indicator-dots autoplay circular class="swiper">
+    <swiper-item class="swiper-item" wx:for="{{swiperList}}" wx:key="goods_id">
+        <image class="" src="{{item.image_src}}" mode="widthFix" />       
+    </swiper-item>
+</swiper>
+  
