@@ -1,4 +1,5 @@
-
+<!-- 输入框组件 -->
+<SearchInput></SearchInput>
 <!-- 首页轮播图 -->
 <swiper indicator-dots autoplay circular class="swiper" indicator-active-color="#fff">
     <swiper-item class="swiper-item" wx:for="{{swiperList}}" wx:key="goods_id">

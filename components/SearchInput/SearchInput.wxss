@@ -1,0 +1,15 @@
+.search-input {
+    height: 80rpx;
+    padding: 15rpx;
+    background: #eb4450;
+}
+.search-input view {
+    background: #fff;
+    font-size: 24rpx;
+    color: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-radius: 8px;
+}

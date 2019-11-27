@@ -1,0 +1,6 @@
+<view>
+    <navigator class="search-input">
+        <view>搜索</view>
+    </navigator>
+</view>
+  
