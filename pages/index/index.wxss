@@ -29,6 +29,9 @@
   /*去除图片下方默认3px*/
   display: block;
 }
+.floor .floor-main .floor-item:nth-last-child(-n+4) {
+  border: 4rpx solid #fff;
+}
 .floor .floor-main .floor-item:nth-last-child(-n+4) image {
   height: 210rpx;
 }
