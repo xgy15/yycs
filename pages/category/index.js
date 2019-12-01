@@ -16,7 +16,9 @@ Page({
     // 右侧的内容 列表
     rightGoods: [],
     // 点击后的索引
-    currentIndex: 0
+    currentIndex: 0,
+    // 右侧滚动条位置
+    scrollTop: 0
   },
 
   // 全局的内部的数据  wxml中找不到   Cates
@@ -46,7 +48,9 @@ Page({
     const currentIndex = e.currentTarget.dataset.index;
     this.setData({
       currentIndex,
-      rightGoods: this.Cates[currentIndex].children
+      rightGoods: this.Cates[currentIndex].children,
+      // 重新将右侧滚动条位置设为最顶端
+      scrollTop: 0
     })
   },
 
