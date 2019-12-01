@@ -14,3 +14,21 @@
     flex: 1;
     overflow: auto;
 }
+.cate_goods .group_title {
+    line-height: 80rpx;
+    text-align: center;
+    font-size: 26rpx;
+}
+.cate_goods .group_main {
+    display: flex;
+    flex-wrap: wrap;
+}
+.cate_goods .group_main .main_item {
+    flex: 0 0 33.33%;
+    text-align: center;
+    color: #666;
+    font-size: 24rpx;
+}
+.cate_goods .group_main image {
+    width: 50%;
+}

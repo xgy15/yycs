@@ -28,11 +28,12 @@ Page({
     request({
       url: 'categories',
     }).then(res => {
-      // console.log(res)
+      console.log(res.data.message)
       // 全局变量的访问通过 this.Cates 就行
       this.Cates = res.data.message;
       this.setData({
-        leftMenus: this.Cates.map(v => v.cat_name)
+        leftMenus: this.Cates.map(v => v.cat_name),
+        rightGoods: this.Cates[0].children
       })
     })
   },
