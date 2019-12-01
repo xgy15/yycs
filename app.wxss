@@ -10,3 +10,9 @@ page,view,text,image,button,input,swiper,swiper-item,navigator,checkbox,rich-tex
 image{
   width: 100%;
 }
+
+/* 使用 css 原生的变量，设置一个主题色 
+  使用的话：var(--themeColor) */
+page {
+  --themeColor: #eb4450
+}

@@ -14,8 +14,10 @@
     border-left: 5rpx solid #fff;
 }
 .contain .menus_item.active {
-    border-left: 5rpx solid #eb4450;
-    color: #eb4450;
+    /* currentColor 是原生的css 属性，是当前的字体的颜色 */
+
+    color: var(--themeColor);
+    border-left: 5rpx solid currentColor;
 }
 .contain .cate_goods {
     flex: 1;
