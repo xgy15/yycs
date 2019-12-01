@@ -1,2 +1,11 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<SearchInput></SearchInput>
+<view class="contain">
+    <!-- 左侧分类列表 -->
+    <view class="cate_menus">
+        <view class="menus_item" wx:for="{{leftMenus}}" wx:key="item">{{item}}</view>
+    </view>
+    <!-- 右侧商品列表 -->
+    <view class="cate_goods">
+
+    </view>
+</view>

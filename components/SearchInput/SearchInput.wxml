@@ -1,6 +1,7 @@
 <view>
     <navigator class="search-input">
-        <view>搜索</view>
+        <view><icon type="search" size="16"></icon>
+           搜索</view>
     </navigator>
 </view>
   

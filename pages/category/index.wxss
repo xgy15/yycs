@@ -1,1 +1,16 @@
-/* pages/category/index.wxss */
+.contain {
+    /* calc是计算的意思 */
+    height: calc(100vh - 80rpx);
+    display: flex;
+}
+.contain .cate_menus {
+    width: 200rpx;
+    overflow: auto;
+    text-align: center;
+    line-height: 80rpx;
+    font-size: 26rpx;
+}
+.contain .cate_goods {
+    flex: 1;
+    overflow: auto;
+}

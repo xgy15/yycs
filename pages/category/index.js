@@ -1,18 +1,40 @@
 // pages/category/index.js
+import request from "../../utils/request";
 Page({
 
   /**
    * 页面的初始数据
    */
+  // wxml中 只能找到 data中的变量的数据 
+  // data 中应该只存放 视图渲染 要用到的数据  
+  // data中的数据越多 页面越卡！！！
+  // 视图要使用的全局数据
   data: {
-
+    // 分类数据--页面渲染的数据
+    // 左侧的标题数组
+    leftMenus: [],
+    // 右侧的内容 列表
+    rightGoods: []
   },
+
+  // 全局的内部的数据  wxml中找不到   Cates
+  // js内部要使用的全局数据 --返回的数据放这里
+  Cates: [],
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    request({
+      url: 'categories',
+    }).then(res => {
+      // console.log(res)
+      // 全局变量的访问通过 this.Cates 就行
+      this.Cates = res.data.message;
+      this.setData({
+        leftMenus: this.Cates.map(v => v.cat_name)
+      })
+    })
   },
 
   /**
