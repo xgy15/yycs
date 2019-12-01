@@ -14,7 +14,9 @@ Page({
     // 左侧的标题数组
     leftMenus: [],
     // 右侧的内容 列表
-    rightGoods: []
+    rightGoods: [],
+    // 点击后的索引
+    currentIndex: 0
   },
 
   // 全局的内部的数据  wxml中找不到   Cates
@@ -33,8 +35,18 @@ Page({
       this.Cates = res.data.message;
       this.setData({
         leftMenus: this.Cates.map(v => v.cat_name),
-        rightGoods: this.Cates[0].children
+        rightGoods: this.Cates[this.data.currentIndex].children
       })
+    })
+  },
+
+  // 这是点击菜单栏触发的
+  handleMenusTap(e) {
+    // console.log(e)
+    const currentIndex = e.currentTarget.dataset.index;
+    this.setData({
+      currentIndex,
+      rightGoods: this.Cates[currentIndex].children
     })
   },
 
