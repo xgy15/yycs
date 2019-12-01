@@ -29,19 +29,47 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 这里需要做一个判断
+    /* 看本地存储有没有旧的数
+          1 假设没有，就发送 ajax，将数据存储到本地
+          2 假设有
+              1 假设时间过期了---重新发送 ajax，将数据存储到本地
+              2 假设时间没有过期---用本地存储的数据
+    */
+    const cates = wx.getStorageSync("cates");
+    if(!cates) {
+      // 这是本地中没有数据
+      this.getCates()
+    }else {
+      if(Date.now() - cates.time > 5*60*1000) {
+        // 这是本地中有数据，但是时间过了5分钟，重新发请求
+        this.getCates()
+      }else {
+        console.log("有数据")
+        this.Cates = cates.list;
+        this.setData({
+          leftMenus: this.Cates.map(v => v.cat_name),
+          rightGoods: this.Cates[this.data.currentIndex].children
+        })
+      }
+    } 
+  },
+  // 这是获取分类数据
+  getCates() {
     request({
       url: 'categories',
     }).then(res => {
-      console.log(res.data.message)
+      // console.log(res.data.message)
       // 全局变量的访问通过 this.Cates 就行
       this.Cates = res.data.message;
       this.setData({
         leftMenus: this.Cates.map(v => v.cat_name),
         rightGoods: this.Cates[this.data.currentIndex].children
       })
+      wx.setStorageSync("cates", {list: this.Cates,time: Date.now()});
+        
     })
   },
-
   // 这是点击菜单栏触发的
   handleMenusTap(e) {
     // console.log(e)
