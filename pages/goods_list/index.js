@@ -40,7 +40,8 @@ Page({
     }).then(res => {
       console.log(res)
       this.setData({
-        goods: res.data.message.goods
+        // 有了加载下一页就不能直接赋值了，不然会覆盖掉
+        goods: [...this.data.goods, ...res.data.message.goods]
       })
       // 计算总页码
       this.TotalPages = Math.ceil(res.data.message.total / this.Params.pagesize);
@@ -86,7 +87,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    // 需要判断有没有下一页的数据
+    if(this.Params.pagenum >= this.TotalPages) {
+      console.log("没有下一页了")
+    }else {
+      this.Params.pagenum++;
+      this.getList();
+    }
   },
 
   /**
