@@ -80,6 +80,13 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    // 下拉刷新--相当于重新进入这个页面
+    // 具体实现： 数据重置！！
+    this.Params.pagenum = 1;
+    this.setData({
+      goods: []
+    })
+    this.getList()
 
   },
 
