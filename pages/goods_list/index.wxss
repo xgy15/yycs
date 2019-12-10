@@ -18,9 +18,17 @@
     flex-direction: column;
     justify-content: space-between;
     font-size: 26rpx;
+    padding: 0 20rpx;
+    overflow: hidden;
   }
   .goods_item .item_right .item_name {
     color: #666;
+    /* 多行文本省略 */     
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
   .goods_item .item_right .item_price {
     color: var(--themeColor);
