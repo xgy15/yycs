@@ -1,19 +1,24 @@
-<!--商品列表开始-->
-<view class="goods_view">
-    <navigator class="goods_item" url="/pages/goods_detail/index?goods_id={{item.goods_id}}" wx:for="{{goods}}" wx:key="goods_id">
-        <view class="img_wrap">
-            <image class="" mode="widthFix" src="{{item.goods_big_logo || 'http://image2.suning.cn/uimg/b2c/newcatentries/0000000000-000000000826147951_1_800x800.jpg'}}"/>
-        </view>
-        <view class="item_right">
-            <view class="item_name">
-                {{item.goods_name}}
+<!-- 顶部搜索框组件 -->
+<SearchInput></SearchInput>
+<!-- 顶部 tabbar 开始 -->
+<Tabbar titles="{{titles}}" currentIndex="{{currentIndex}}" bindtitlesChange="titlesChange">
+    <!--商品列表开始-->
+    <view class="goods_view" wx:if="{{currentIndex == 0}}">
+        <navigator class="goods_item" url="/pages/goods_detail/index?goods_id={{item.goods_id}}" wx:for="{{goods}}" wx:key="goods_id">
+            <view class="img_wrap">
+                <image class="" mode="widthFix" src="{{item.goods_big_logo || 'http://image2.suning.cn/uimg/b2c/newcatentries/0000000000-000000000826147951_1_800x800.jpg'}}"/>
             </view>
-            <view class="item_price">
-                ￥{{item.goods_price}}
+            <view class="item_right">
+                <view class="item_name">
+                    {{item.goods_name}}
+                </view>
+                <view class="item_price">
+                    ￥{{item.goods_price}}
+                </view>
             </view>
-        </view>
-    </navigator>
-</view>
-  
+        </navigator>
+    </view>
+</Tabbar>
+
 
   

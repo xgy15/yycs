@@ -20,6 +20,10 @@ Page({
   data: {
     // 要显示的数据,商品列表
     goods: [],
+    // 这是顶部tabbar 的数据
+    titles: ["综合","销量","价格"],
+    // 这是顶部 tabbar 的选中状态
+    currentIndex: 0,
   },
 
   /**
@@ -47,7 +51,14 @@ Page({
       this.TotalPages = Math.ceil(res.data.message.total / this.Params.pagesize);
     })
   },
-
+  // 子组件传来的事件
+  titlesChange(e) {
+    // console.log(e)
+    // 传过来的参数放在 e.detail 下面
+    this.setData({
+      currentIndex: e.detail.index
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
