@@ -22,9 +22,27 @@
     <view class="desc_title">图文详情</view>
     <view class="desc_content">
         <!-- 这里放富文本标签，因为每个图文详情都不一样 -->
-        <rich-text class="" nodes="{{goodsInfo.goods_introduce}}">
-            
+        <rich-text class="" nodes="{{goodsInfo.goods_introduce}}">  
         </rich-text>
     </view>
 </view>
+<!-- 底部工具栏开始 -->
+<view class="btm_tools">
+    <view class="tools_item">
+        <text class="iconfont icon-kefu"></text>
+        <view>联系客服</view>
+    </view>
+    <view class="tools_item">
+        <text class="iconfont icon-yixianshi-"></text>
+        <view>分享</view>
+    </view>
+    <view class="tools_item">
+        <text class="iconfont icon-gouwuche"></text>
+        <view>购物车</view>
+    </view>
+    <view class="tools_item item_add">加入购物车</view>
+    <view class="tools_item item_buy">立即购买</view>
+</view>
+  
+
   
