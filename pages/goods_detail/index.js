@@ -1,20 +1,33 @@
 // pages/goods_detail/index.js
+import request from "../../utils/request";
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    goodsInfo: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getDetail(options.goods_id)
   },
-
+  getDetail(goods_id) {
+    request({
+      url: 'goods/detail',
+      data: {
+        goods_id
+      }
+    }).then(res => {
+      console.log(res)
+      this.setData({
+        goodsInfo: res.data.message
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
