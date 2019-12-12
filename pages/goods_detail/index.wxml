@@ -31,15 +31,19 @@
     <view class="tools_item">
         <text class="iconfont icon-kefu"></text>
         <view>联系客服</view>
+        <!-- 这是封装好的点击就能打开客服 -->
+        <button open-type="contact">contact</button>
     </view>
     <view class="tools_item">
         <text class="iconfont icon-yixianshi-"></text>
         <view>分享</view>
+        <!-- 这是封装好的点击就能分享 -->
+        <button open-type="share">share</button>
     </view>
-    <view class="tools_item">
+    <navigator url="/pages/cart/index" open-type="switchTab" class="tools_item">
         <text class="iconfont icon-gouwuche"></text>
         <view>购物车</view>
-    </view>
+    </navigator>
     <view class="tools_item item_add">加入购物车</view>
     <view class="tools_item item_buy">立即购买</view>
 </view>

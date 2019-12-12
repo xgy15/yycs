@@ -59,12 +59,22 @@
     height: 80rpx;
     width: 100%;
     font-size: 20rpx;
+    border-top: 1rpx solid #ccc;
     .tools_item {
         flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        // 因为封装的 button 有很多默认样式，因此直接宽高100%，透明度为0就行
+        position: relative;
+        button {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            // background: #f00;
+        }
     }
     .item_add {
         flex: 2;
