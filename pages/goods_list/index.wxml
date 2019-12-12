@@ -18,6 +18,8 @@
             </view>
         </navigator>
     </view>
+    <view wx:elif="{{currentIndex == 1}}">1</view>
+    <view wx:else>2</view>
 </Tabbar>
 
 
