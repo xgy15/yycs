@@ -5,7 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    urls: [
+      {url: 'https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2537096713,1784784728&fm=26&gp=0.jpg',id: 1},
+      {url: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4237991474,3664107086&fm=26&gp=0.jpg',id: 2},
+      {url: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3819907577,3645217685&fm=26&gp=0.jpg',id: 3},
+      {url: 'https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3236962205,2739556846&fm=26&gp=0.jpg',id: 4},
+      {url: 'https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4207048239,791527238&fm=26&gp=0.jpg',id: 5},
+      {url: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2983172482,2281172392&fm=26&gp=0.jpg',id: 6},
+    ]
   },
 
   /**
