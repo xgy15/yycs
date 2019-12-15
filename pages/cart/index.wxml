@@ -1,5 +1,6 @@
-<view class="wrap">
-    <block wx:for="{{urls}}" wx:key="{{id}}">
+<view class="wrap" bindtouchstart="touchStart" 
+bindtouchmove="touchMove" bindtouchend="touchEnd">
+    <!-- <block wx:for="{{urls}}" wx:key="item">
         <view class="wrap_item active2" wx:if="{{index==0}}">
             <image class="item_img" src="{{item.url}}" mode="widthFix"/>
         </view>
@@ -12,6 +13,12 @@
         <view class="wrap_item" wx:else>
             <image class="item_img" src="{{item.url}}" mode="widthFix"/>
         </view>
-    </block>
+    </block> -->
+    <block wx:for="{{urls}}" wx:key="item">
+            
+            <view class="wrap_item {{item.id}}">
+                <image class="item_img" src="{{item.url}}" mode="widthFix"/>
+            </view>
+        </block>
       
 </view>
