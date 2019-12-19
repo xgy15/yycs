@@ -1,0 +1,43 @@
+<<<<<<< HEAD
+=======
+/* pages/cart/index.wxss */
+.wrap {
+    width: 600rpx;
+    height: 800rpx;
+    position: relative;
+    margin-left: auto;
+}
+.wrap_item {
+    height: 300rpx;
+    width: 100%;
+    position: absolute;
+    right: -1000rpx;
+    top:  -1000rpx;
+    transition: all 0.4s;
+}
+.item_img {
+    width: 100%;
+       
+}
+.active1 {
+    /* height: 300rpx; */
+    top: 300rpx;
+    right: 0;
+}
+.active2 {
+    /* height: 150rpx;
+    width: 300rpx; */
+    transform: scale(0.5);
+    top: 0;
+    right: -150rpx;
+    opacity: 0.8;
+}
+.active3 {
+    /* height: 150rpx;
+    width: 300rpx; */
+    transform: scale(0.5);
+    top: 800rpx;
+    right: -150rpx;
+    opacity: 0.8;
+}
+>>>>>>> a3dc11d35bb8282cb1dae5d6c0cb87795f3c18ea

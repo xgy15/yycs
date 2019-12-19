@@ -1,1 +1,28 @@
+<<<<<<< HEAD
 <button bindtap="chooseAddress">获取收货地址</button>
+=======
+<view class="wrap" bindtouchstart="touchStart" 
+bindtouchmove="touchMove" bindtouchend="touchEnd">
+    <!-- <block wx:for="{{urls}}" wx:key="item">
+        <view class="wrap_item active2" wx:if="{{index==0}}">
+            <image class="item_img" src="{{item.url}}" mode="widthFix"/>
+        </view>
+        <view class="wrap_item active1" wx:elif="{{index==1}}">
+            <image class="item_img" src="{{item.url}}" mode="widthFix"/>
+        </view>
+        <view class="wrap_item active3" wx:elif="{{index==2}}">
+            <image class="item_img" src="{{item.url}}" mode="widthFix"/>
+        </view>
+        <view class="wrap_item" wx:else>
+            <image class="item_img" src="{{item.url}}" mode="widthFix"/>
+        </view>
+    </block> -->
+    <block wx:for="{{urls}}" wx:key="item">
+            
+            <view class="wrap_item {{item.id}}">
+                <image class="item_img" src="{{item.url}}" mode="widthFix"/>
+            </view>
+        </block>
+      
+</view>
+>>>>>>> a3dc11d35bb8282cb1dae5d6c0cb87795f3c18ea
