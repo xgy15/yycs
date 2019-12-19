@@ -1,27 +1,87 @@
 // pages/cart/index.js
+import regeneratorRuntime from '../../lib/runtime/runtime';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    urls: [
-      {url: 'https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2537096713,1784784728&fm=26&gp=0.jpg',id: 1},
-      {url: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4237991474,3664107086&fm=26&gp=0.jpg',id: 2},
-      {url: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3819907577,3645217685&fm=26&gp=0.jpg',id: 3},
-      {url: 'https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3236962205,2739556846&fm=26&gp=0.jpg',id: 4},
-      {url: 'https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=4207048239,791527238&fm=26&gp=0.jpg',id: 5},
-      {url: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2983172482,2281172392&fm=26&gp=0.jpg',id: 6},
-    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+      
+  },
+  // chooseAddress() {
+  //   wx.getSetting({
+  //     success: (result) => {
+  //       // console.log(result)
+  //       const auth = result.authSetting['scope.address'];
+  //       if(auth || auth === undefined){
+  //         wx.chooseAddress({
+  //           success: (e) => {
+  //             console.log(e)
+  //           },
+  //           fail: () => {},
+  //           complete: () => {}
+  //         });
+
+  //       }else {
+  //         wx.openSetting({
+  //           success: (result) => {
+  //             console.log(result)
+  //             wx.chooseAddress({
+  //               success: (e) => {
+  //                 console.log(e)
+  //               },
+  //               fail: () => {},
+  //               complete: () => {}
+  //             });
+  //           },
+  //           fail: () => {},
+  //           complete: () => {}
+  //         });
+
+  //       }
+  //     },
+  //     fail: () => {},
+  //     complete: () => {}
+  //   });
+
+
+  // },
+  async chooseAddress() {
+    // wx.openSetting({
+    //   success: (result) => {
+    //     console.log(result)
+    //   },
+    //   fail: () => {},
+    //   complete: () => {}
+    // });
+    // const auth = await new Promise((resolve) => {
+    //   wx.openSetting({
+    //     success: (result) => {
+    //       resolve(result);
+    //     },
+    //     fail: () => {},
+    //     complete: () => {},
+    //   });
+    // });
+    // console.log(auth);
+    wx.scanCode({
+      onlyFromCamera: false,
+      scanType: ['qrCode', 'barCode'],
+      success: (result) => {
+        console.log(result)
+      },
+      fail: () => {},
+      complete: () => {}
+    });
 
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
